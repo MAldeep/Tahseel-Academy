@@ -1,6 +1,7 @@
 import { Cairo, Poppins } from "next/font/google";
 import Header from "../components/Header";
 import I18nProvider from "../i18n-provider";
+import Footer from "../components/Footer";
 
 
 
@@ -14,6 +15,7 @@ export default function LocaleLayout({ children, params }) {
           <Header locale={locale} />
           {children}
         </I18nProvider>
+        <Footer locale={locale}/>
       </body>
     </html>
   );
