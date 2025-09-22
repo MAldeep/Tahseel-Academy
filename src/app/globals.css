@@ -13,3 +13,4 @@ body {
   @apply min-h-screen;
   background: linear-gradient(to bottom, #f0f9ff, #ffffff);
 }
+.custom-class * { color: #000 !important; fill: #000 !important; }
