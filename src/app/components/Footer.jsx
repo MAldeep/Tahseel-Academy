@@ -22,7 +22,7 @@ export default function Footer({ locale }) {
 
   return (
     <footer
-      className={`w-full h-[60dvh] lg:h-[40dvh] bg-gray-50 flex flex-col  justify-between items-center px-3.5 lg:px-32 py-7 ${fontClass}`}
+      className={`w-full h-[80dvh] lg:h-[40dvh] bg-gray-50 flex flex-col  justify-between items-center px-3.5 lg:px-32 py-7 ${fontClass}`}
     >
       <div className="w-full flex flex-col lg:flex-row justify-start items-start lg:items-center gap-3.5 lg:gap-9">
         <div className="flex justify-between w-full lg:w-1/2">
@@ -36,7 +36,7 @@ export default function Footer({ locale }) {
         </div>
         <NavLinks locale={locale} classes={`flex flex-col gap-4 text-[16px]`} />
         <CircularText
-          text="Tahseel Academy 2025"
+          text="Tahseel Academy @ 2025"
           onHover="speedUp"
           spinDuration={20}
           className="custom-class"

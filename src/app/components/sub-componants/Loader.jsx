@@ -1,4 +1,3 @@
-// src/components/Loader.jsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -10,7 +9,7 @@ export default function Loader({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // ⏱️ 2 seconds
+    const timer = setTimeout(() => setLoading(false), 2000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -30,7 +29,7 @@ export default function Loader({ children }) {
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
             >
-              <Image src={images.logo.src} alt="Logo" width={100} height={100} />
+              <Image src={images.logo.src} alt="Logo" width={200} height={200} />
             </motion.div>
           </motion.div>
         )}

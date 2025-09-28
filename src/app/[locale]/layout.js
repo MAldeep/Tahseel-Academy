@@ -6,8 +6,8 @@ import Loader from "../components/sub-componants/Loader";
 
 
 
-export default function LocaleLayout({ children, params }) {
-  const { locale } = params;
+export default async function LocaleLayout({ children, params }) {
+  const { locale } = await  params;
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
@@ -17,7 +17,7 @@ export default function LocaleLayout({ children, params }) {
           <Loader>
             {children}
           </Loader>
-          <WhatsAppButton/>
+          <WhatsAppButton locale={locale}/>
         </I18nProvider>
         <Footer locale={locale}/>
       </body>
