@@ -1,19 +1,20 @@
-"use client";
+import ContactForm from "../components/ContactForm";
+import Hero from "../components/Hero";
+import ContactCard from "../components/sub-componants/ContactCard";
+import FeaturedCousres from "../components/sub-componants/FeaturedCousres";
+import MainAbout from "../components/sub-componants/MainAbout";
 
-import { useTranslation } from "react-i18next";
-
-export default function Home({ params }) {
-  const { t } = useTranslation("common");
-
+export default async function Home({ params }) {
+  const { locale } = await params;
   return (
-    <main className="w-full min-h-[150vh] mt-32">
-      <h1 className="text-4xl font-bold ">{t("welcome")}</h1>
-      {/* <button
-        onClick={toggleLanguage}
-        className="mt-6 px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
-      >
-        {locale === "ar" ? "English" : "العربية"}
-      </button> */}
+    <main className="w-full  overflow-hidden">
+      <Hero />
+      <MainAbout locale={locale} />
+      <FeaturedCousres locale={locale} />
+      <div className="w-full px-4 lg:px-2 my-8 flex flex-col lg:flex-row">
+        <ContactCard/>
+        <ContactForm />
+      </div>
     </main>
   );
 }

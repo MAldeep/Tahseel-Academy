@@ -21,28 +21,28 @@ export default function NavLinks({locale , classes}) {
     <nav className={`${classes} ${fontClass}`}>
       <Link
         href={`/${locale}`}
-        className="relative group transition-all duration-300 hover:text-[#9333ea]"
+        className="relative group transition-all duration-300 "
       >
         {t("home")}
         <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
       </Link>
       <Link
         href={`/${locale}/about`}
-        className="relative group transition-all duration-300 hover:text-[#9333ea]"
+        className="relative group transition-all duration-300 "
       >
         {t("aboutTitle")}
         <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
       </Link>
       <Link
         href={`/${locale}/contact`}
-        className="relative group transition-all duration-300 hover:text-[#9333ea]"
+        className="relative group transition-all duration-300 "
       >
         {t("contactTitle")}
         <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
       </Link>
       <Link
         href={`/${locale}/courses`}
-        className="relative group transition-all duration-300 hover:text-[#9333ea]"
+        className="relative group transition-all duration-300"
       >
         {t("courses")}
         <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
