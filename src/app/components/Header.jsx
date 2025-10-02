@@ -39,7 +39,11 @@ export default function Header({ locale }) {
         />
       </Link>
       <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} locale={locale} />
-      <NavLinks locale={locale} classes={`hidden lg:flex w-2xl justify-between gap-8`}/>
+      <NavLinks
+        locale={locale}
+        classes={`hidden lg:flex w-2xl justify-between gap-8`}
+        isScrolled={isScrolled}
+      />
       <motion.div
         className="w-24 h-10 flex items-center justify-between rounded-full cursor-pointer relative overflow-hidden border border-gray-300 bg-gray-100"
         onClick={toggleLanguage}
@@ -81,7 +85,9 @@ export default function Header({ locale }) {
         </motion.span>
       </motion.div>
       <HiMenuAlt3
-        className="text-2xl block lg:hidden"
+        className={`text-2xl block lg:hidden ${
+          isScrolled ? "text-black" : "text-white"
+        }`}
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (

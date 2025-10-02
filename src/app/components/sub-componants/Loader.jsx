@@ -20,7 +20,7 @@ export default function Loader({ children }) {
   useEffect(() => {
     if (!pathname) return;
     setLoading(true); // show loader immediately
-    const timer = setTimeout(() => setLoading(false), 500); // hide after delay
+    const timer = setTimeout(() => setLoading(false), 2000); // hide after delay
     return () => clearTimeout(timer);
   }, [pathname]);
 

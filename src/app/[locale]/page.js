@@ -9,10 +9,10 @@ export default async function Home({ params }) {
   return (
     <main className="w-full  overflow-hidden">
       <Hero />
-      <MainAbout locale={locale} />
       <FeaturedCousres locale={locale} />
+      <MainAbout locale={locale} />
       <div className="w-full px-4 lg:px-2 my-8 flex flex-col lg:flex-row">
-        <ContactCard/>
+        <ContactCard />
         <ContactForm />
       </div>
     </main>

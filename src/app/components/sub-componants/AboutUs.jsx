@@ -20,7 +20,7 @@ export default function AboutUs({ locale }) {
     <div className="w-full flex flex-col gap-5 px-5 lg:px-28 py-5 lg:py-10">
       <h1 className={`${fontClass} font-bold text-5xl`}>{t("aboutTitle")} :</h1>
       <BlurText
-        text={t("footer_description")}
+        text={t("about_Content")}
         delay={150}
         animateBy="words"
         direction="top"

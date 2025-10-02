@@ -34,7 +34,36 @@ export default function Footer({ locale }) {
           </Link>
           <p className="w-full lg:w-[400px]">{t("footer_description")}</p>
         </div>
-        <NavLinks locale={locale} classes={`flex flex-col gap-4 text-[16px]`} />
+        <nav className="flex flex-col gap-4 text-[16px]">
+          <Link
+            href={`/${locale}`}
+            className={`relative group transition-all duration-300 text-black`}
+          >
+            {t("home")}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link
+            href={`/${locale}/about`}
+            className={`relative group transition-all duration-300 text-black`}
+          >
+            {t("aboutTitle")}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link
+            href={`/${locale}/contact`}
+            className={`relative group transition-all duration-300 text-black`}
+          >
+            {t("contactTitle")}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+          <Link
+            href={`/${locale}/courses`}
+            className={`relative group transition-all duration-300 text-black `}
+          >
+            {t("courses")}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1E3A8A] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        </nav>
         <CircularText
           text="Tahseel Academy @ 2025"
           onHover="speedUp"

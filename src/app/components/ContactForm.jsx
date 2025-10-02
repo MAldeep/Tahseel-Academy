@@ -2,11 +2,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import { useParams } from "next/navigation";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [status, setStatus] = useState("");
-
+  const params = useParams();
+  const locale = params?.locale;
+  const roundedEn = "rounded-t-2xl lg:rounded-r-2xl lg:rounded-tl-none";
+  const roundedAr = "rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none";
+  const roundedClass = locale === "ar" ? roundedAr : roundedEn;
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -17,10 +26,10 @@ export default function ContactForm() {
 
     emailjs
       .send(
-        "your_service_id", // replace with your EmailJS service ID
-        "your_template_id", // replace with your EmailJS template ID
+        "your_service_id",
+        "your_template_id", 
         formData,
-        "your_public_key" // replace with your EmailJS public key
+        "your_public_key" 
       )
       .then(
         () => setStatus("✅ Message sent!"),
@@ -36,7 +45,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col h-full bg-center bg-cover rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none items-center justify-center w-full gap-6 bg-gradient-to-tr from-sky-100 to-blue-300 p-4"
+            className={`flex flex-col h-full bg-center bg-cover items-center justify-center w-full gap-6 bg-gradient-to-tr from-sky-100 to-blue-300 p-4 ${roundedClass}`}
           >
             <motion.h1
               initial={{ y: -20, opacity: 0 }}
@@ -61,7 +70,10 @@ export default function ContactForm() {
               }}
             >
               <motion.input
-                variants={{ hidden: { y: 25, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                variants={{
+                  hidden: { y: 25, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
                 whileFocus={{ scale: 1.02 }}
                 type="text"
                 name="name"
@@ -73,7 +85,10 @@ export default function ContactForm() {
               />
 
               <motion.input
-                variants={{ hidden: { y: 25, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                variants={{
+                  hidden: { y: 25, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
                 whileFocus={{ scale: 1.02 }}
                 type="email"
                 name="email"
@@ -85,7 +100,10 @@ export default function ContactForm() {
               />
 
               <motion.textarea
-                variants={{ hidden: { y: 25, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                variants={{
+                  hidden: { y: 25, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
                 whileFocus={{ scale: 1.02 }}
                 name="message"
                 placeholder="Enter Your Message"
@@ -97,7 +115,10 @@ export default function ContactForm() {
               />
 
               <motion.button
-                variants={{ hidden: { y: 25, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                variants={{
+                  hidden: { y: 25, opacity: 0 },
+                  visible: { y: 0, opacity: 1 },
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"

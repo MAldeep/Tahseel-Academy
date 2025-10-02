@@ -5,7 +5,7 @@ import { MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function WhatsAppButton({ locale }) {
-  const phone = "201093998138";
+  const phone = "+96541112662";
   const message = "Hello, I’m interested!";
   const [hovered, setHovered] = useState(false);
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(
