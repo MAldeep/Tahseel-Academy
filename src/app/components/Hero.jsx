@@ -3,10 +3,10 @@ import React from "react";
 import { images } from "../../../public/assets/images";
 import { useTranslation } from "react-i18next";
 import { Cairo, Poppins } from "next/font/google";
+import CTAbtn from "./sub-componants/CTAbtn";
 const cairo = Cairo({
   subsets: ["arabic"],
   weight: ["400", "700"],
-  variable: "--font-cairo",
 });
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,7 +18,7 @@ export default function Hero({ locale }) {
   const fontClass = locale === "ar" ? cairo.className : poppins.className;
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div className="relative w-full h-dvh overflow-hidden">
       {/* Background Image */}
       <img
         src={images.hero.src}
@@ -30,13 +30,11 @@ export default function Hero({ locale }) {
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
         {/* Content goes here */}
         <div className="text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold w-full lg:w-2xl">
+          <h1 className={`text-4xl md:text-6xl font-bold w-full lg:w-2xl ${fontClass} leading-relaxed`}>
             {t("hero_Main")}
           </h1>
-          <p className="mt-4 text-lg md:text-xl">{t("hero_Sec")}</p>
-          <button className="mt-6 px-6 py-3 bg-white text-black rounded-lg shadow-md hover:bg-gray-200 transition cursor-pointer animate-pulse">
-            {t("hero_Btn")}
-          </button>
+          <p className={`mt-4 text-lg md:text-xl ${fontClass}`}>{t("hero_Sec")}</p>
+          <CTAbtn font={fontClass}/>
         </div>
       </div>
     </div>

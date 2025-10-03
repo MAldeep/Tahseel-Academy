@@ -41,6 +41,7 @@ export default function WhatsAppButton({ locale }) {
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >
+        
         <MessageCircle size={28} />
       </motion.a>
     </div>
