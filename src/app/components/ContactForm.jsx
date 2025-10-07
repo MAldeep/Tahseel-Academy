@@ -38,7 +38,7 @@ export default function ContactForm() {
     setStatus("Sending...");
 
     emailjs
-      .send("service_oabig9p", "template_26xt9a3", formData, "yXzmb02ob8rdOiNKA")
+      .send("service_8j6wb5m", "template_26xt9a3", formData, "yXzmb02ob8rdOiNKA")
       .then(
         () => setStatus("✅ Message sent!"),
         (error) => setStatus("❌ Failed to send: " + error.text)
