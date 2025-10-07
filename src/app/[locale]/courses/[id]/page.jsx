@@ -1,5 +1,17 @@
 import { courses } from "@/data/courses";
-
+import { Cairo, Poppins } from "next/font/google";
+import { images } from "../../../../../public/assets/images";
+import CTAbtn from "@/app/components/sub-componants/CTAbtn";
+const cairo = Cairo({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-cairo",
+});
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-poppins",
+});
 export async function generateStaticParams() {
   return ["en", "ar"].flatMap((locale) =>
     courses[locale].map((course) => ({
@@ -40,6 +52,7 @@ export default function CoursePage({ params }) {
   const { locale, id } = params;
   const data = courses[locale] || courses.en;
   const course = data.find((c) => c.id === id);
+  const fontClass = locale === "ar" ? cairo.className : poppins.className;
 
   if (!course) {
     return (
@@ -50,9 +63,28 @@ export default function CoursePage({ params }) {
   }
 
   return (
-    <div className="p-10">
-      <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-      <p className="text-lg">{course.desc}</p>
+    <div className="">
+      <img
+        src={images.courses.src}
+        className="w-full h-[60vh] object-cover relative"
+      />
+      {/* overlay */}
+      <div className="w-full h-[60vh] absolute inset-0 bg-black/50"></div>
+      <div className="px-4 lg:px-20 py-9 flex flex-col gap-12 items-center bg-gray-100">
+        <h1 className={`text-4xl font-bold mb-4 ${fontClass}`}>
+          {course.title}
+        </h1>
+        <div className="w-full flex flex-col lg:flex-row gap-3.5 justify-between items-center">
+          <div>
+            <pre className={`${fontClass} text-[18px] lg:text-[18px] whitespace-pre-wrap`}>{course.details}</pre>
+            <CTAbtn font={fontClass}/>
+          </div>
+          <img
+            src={course.img}
+            className="w-full lg:w-1/2 rounded-3xl object-cover h-[100vh]"
+          />
+        </div>
+      </div>
     </div>
   );
 }

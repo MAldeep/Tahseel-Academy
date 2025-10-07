@@ -7,6 +7,7 @@ import dentistry from "./images/dentistry.jpg";
 import pharmacy from "./images/pharmacy.jpg";
 import nursing from "./images/nursing.jpg";
 import allover from "./images/allover.jpg";
+import courses from "./images/courses.jpg";
 export const images = {
   logo: logo,
   hero: hero,
@@ -17,4 +18,5 @@ export const images = {
   pharmacy: pharmacy,
   nursing: nursing,
   allover: allover,
+  courses: courses,
 };

@@ -25,7 +25,7 @@ export default function AboutUs({ locale }) {
         <h1 className={`${fontClass} font-bold text-5xl`}>{t("who")} </h1>
         <BlurText
           text={t("about_pitch")}
-          delay={150}
+          delay={50}
           animateBy="words"
           direction="top"
           className={`text-2xl whitespace-pre-line font-bold ${fontClass} font-bold`}
