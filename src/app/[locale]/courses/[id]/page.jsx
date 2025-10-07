@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: course.seo.title,
       description: course.seo.description,
-      url: `https://yourdomain.com/${locale}/courses/${id}`,
+      url: `https://tahsselacademy.com/${locale}/courses/${id}`,
       siteName: "Tahseel Academy",
       locale: locale === "ar" ? "ar_KW" : "en_US",
       type: "article",
