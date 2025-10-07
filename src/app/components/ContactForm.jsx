@@ -18,14 +18,13 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "", // 👈 input جديد للموبايل
+    phone: "",
     message: "",
   });
   const [status, setStatus] = useState("");
   const params = useParams();
   const locale = params?.locale;
 
-  // دوران الحواف مكمّل مع الكارد
   const roundedAr = "rounded-b-2xl lg:rounded-l-2xl lg:rounded-r-none";
   const roundedEn = "rounded-b-2xl lg:rounded-r-2xl lg:rounded-l-none";
   const roundedClass = locale === "ar" ? roundedAr : roundedEn;
@@ -39,7 +38,7 @@ export default function ContactForm() {
     setStatus("Sending...");
 
     emailjs
-      .send("your_service_id", "your_template_id", formData, "your_public_key")
+      .send("service_oabig9p", "template_qrvazxv", formData, "yXzmb02ob8rdOiNKA")
       .then(
         () => setStatus("✅ Message sent!"),
         (error) => setStatus("❌ Failed to send: " + error.text)
@@ -72,7 +71,7 @@ export default function ContactForm() {
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
-        {/* الاسم */}
+
         <motion.input
           variants={{
             hidden: { y: 20, opacity: 0 },
@@ -87,8 +86,6 @@ export default function ContactForm() {
           className="bg-white py-3 px-5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
-
-        {/* البريد الإلكتروني */}
         <motion.input
           variants={{
             hidden: { y: 20, opacity: 0 },
@@ -105,8 +102,6 @@ export default function ContactForm() {
           className="bg-white py-3 px-5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           required
         />
-
-        {/* رقم الموبايل */}
         <motion.input
           variants={{
             hidden: { y: 20, opacity: 0 },
@@ -121,11 +116,11 @@ export default function ContactForm() {
           className={`bg-white py-3 px-5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 ${
             locale === "ar" ? "text-right" : "text-left"
           }`}
-          dir={locale === "ar" ? "rtl" : "ltr"} // 👈 إضافة الاتجاه
+          dir={locale === "ar" ? "rtl" : "ltr"} 
           required
         />
 
-        {/* الرسالة */}
+
         <motion.textarea
           variants={{
             hidden: { y: 20, opacity: 0 },
@@ -141,7 +136,7 @@ export default function ContactForm() {
           required
         />
 
-        {/* زر الإرسال */}
+
         <motion.button
           variants={{
             hidden: { y: 20, opacity: 0 },

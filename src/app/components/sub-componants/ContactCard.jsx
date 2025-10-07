@@ -16,7 +16,6 @@ export default function ContactCard() {
   const params = useParams();
   const locale = params?.locale;
 
-  // ظبط الاستدارة حسب اللغة
   const roundedAr = "rounded-t-2xl lg:rounded-r-2xl lg:rounded-l-none";
   const roundedEn = "rounded-t-2xl lg:rounded-l-2xl lg:rounded-r-none";
   const roundedClass = locale === "ar" ? roundedAr : roundedEn;
